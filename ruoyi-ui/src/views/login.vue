@@ -93,13 +93,16 @@ export default {
     }
   },
   created() {
+    debugger
     this.getCode();
     this.getCookie();
   },
   methods: {
     getCode() {
       getCodeImg().then(res => {
+        debugger
         this.codeUrl = "data:image/gif;base64," + res.img;
+        console.log(this.codeUrl);
         this.loginForm.uuid = res.uuid;
       });
     },

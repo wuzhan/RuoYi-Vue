@@ -14,6 +14,7 @@ const service = axios.create({
 })
 // request拦截器
 service.interceptors.request.use(config => {
+  // debugger
   // 是否需要设置 token
   const isToken = (config.headers || {}).isToken === false
   if (getToken() && !isToken) {
@@ -49,6 +50,7 @@ service.interceptors.request.use(config => {
 
 // 响应拦截器
 service.interceptors.response.use(res => {
+  // debugger
     // 未设置状态码则默认成功状态
     const code = res.data.code || 200;
     // 获取错误信息

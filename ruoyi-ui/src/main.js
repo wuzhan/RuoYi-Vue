@@ -69,5 +69,6 @@ new Vue({
   el: '#app',
   router,
   store,
+  //把指定的组件模板渲染为HTML结构
   render: h => h(App)
 })
