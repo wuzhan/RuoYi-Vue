@@ -87,7 +87,9 @@ export default {
   watch: {
     $route: {
       handler: function(route) {
+        debugger
         this.redirect = route.query && route.query.redirect;
+        console.log(this.redirect);
       },
       immediate: true
     }
@@ -130,6 +132,8 @@ export default {
             Cookies.remove('rememberMe');
           }
           this.$store.dispatch("Login", this.loginForm).then(() => {
+            debugger
+            console.log(this.redirect);
             this.$router.push({ path: this.redirect || "/" }).catch(()=>{});
           }).catch(() => {
             this.loading = false;
